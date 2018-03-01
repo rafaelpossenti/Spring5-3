@@ -27,7 +27,10 @@ public class StudenController {
 	public String processForm(@ModelAttribute("student") Student theStudent) {
 		
 		System.out.println("theStudent : " + theStudent.getFirstName() + " " 
-							+ theStudent.getLastName() + " " + theStudent.getCountry() + " " + theStudent.getFavoriteLanguage() + " ");
+							+ theStudent.getLastName() + " " + theStudent.getCountry() 
+							+ " " + theStudent.getFavoriteLanguage() + " " + 
+							theStudent.getOperatingSystems()
+							);
 		return "student-confirmation";
 	}
 	
