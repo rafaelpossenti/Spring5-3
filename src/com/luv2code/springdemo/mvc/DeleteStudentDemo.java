@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import com.luv2code.springdemo.entity.Student;
 
-public class UpdateStudentDemo {
+public class DeleteStudentDemo {
 	public static void main(String Args[]) {
 		
 		// create session factory
@@ -18,31 +18,28 @@ public class UpdateStudentDemo {
 		Session session = factory.getCurrentSession();
 		
 		try {
-			//MY NEW CODE
 			//find out the student's id: primary key 
 			int studentId = 1;
+			
 			//now get a new session and start transaction 
 			session = factory.getCurrentSession();
 			session.beginTransaction(); 
 			
+			//retrieve student based on the id
 			Student myStudent = session.get(Student.class, studentId);
-			myStudent.setFirstName("Scooby");
-			// retrieve student based on the id: primary key a
+			
+			//delete the student 
+			//session.delete(myStudent);
+			
+			///delete student id=2
+			session.createQuery("delete from Student where id=2").executeUpdate();
+			
+			
+			
 			
 			//commit the transaction 
 			session.getTransaction().commit();
-			
-			
-			//NEW CODE
-			session = factory.getCurrentSession();
-			session.beginTransaction();
-			
-			session.createQuery("update Student  set email='foo@gmail.com'")
-				.executeUpdate();
-			
-			session.getTransaction().commit();
-			
-			
+						
 		}finally {
 			factory.close();
 		}
