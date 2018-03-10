@@ -7,7 +7,7 @@ public class TestJDBC {
 	
 	
 	public static void main(String[] args) {
-		String DBURL = "jdbc:postgresql://localhost:5433/hbstudent";
+		String DBURL = "jdbc:postgresql://localhost:5433/hb-01-one-to-one-uni";
 		String USER = "postgres";
 		String SENHA = "root";
 		
