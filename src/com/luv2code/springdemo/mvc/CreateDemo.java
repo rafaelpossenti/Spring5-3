@@ -18,7 +18,7 @@ public class CreateDemo {
 				.addAnnotatedClass(InstructorDetail.class)
 				.buildSessionFactory();
 		
-		//create session 
+		//create new session 
 		Session session = factory.getCurrentSession();
 		
 		try {
